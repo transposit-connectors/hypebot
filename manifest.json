@@ -14,6 +14,15 @@
         "access": {
           "requireUser": true
         }
+      }, {
+        "id": "def_and_syn",
+        "tql": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
+          "tql": "SELECT meta.id, meta.uuid, fl, syns, shortdef FROM merriam_webster_dict.collegiate_dictionary_search\n  WHERE word=@word"
+        }
       }],
       "javascriptAPIVersion": "3"
     }
