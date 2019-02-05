@@ -9,8 +9,9 @@
   
   console.log("possible_terms", possible_terms);
   for (let i in possible_terms) {
+    const sanitized = possible_terms[i].toLowerCase().replace(" ", "").replace("-", "");
     try {
-      const emoj = api.run("this.get_emoji", {name: possible_terms[i]})
+      const emoj = api.run("this.get_emoji", {name: sanitized})
       if (emoj[0].moji) {
         return emoj[0].moji;
       }
