@@ -32,6 +32,15 @@
           }],
           "js": "extract_syn.js"
         }
+      }, {
+        "id": "word_search",
+        "function": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
+          "js": "word_search.js"
+        }
       }],
       "javascriptAPIVersion": "3"
     }

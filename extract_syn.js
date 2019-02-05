@@ -9,6 +9,7 @@
     }
   }
   return { ...res,
+    id: res.id.split(":")[0],
     syns: Object.keys(syn_dict)
   }; 
 })
