@@ -24,7 +24,7 @@
             "name": "word",
             "type": "STRING"
           }],
-          "tql": "SELECT meta.id, meta.uuid, hwi.hw, fl, syns, shortdef FROM merriam_webster_dict.collegiate_dictionary_search\n  WHERE word=@word",
+          "tql": "\nSELECT meta.id, meta.uuid, hwi.hw, fl, syns, shortdef FROM merriam_webster_dict.collegiate_dictionary_search\n  WHERE word=@word LIMIT 3 /* if it's not in the first 3, it'll probably never happen*/",
           "cacheExpirySec": 86400
         }
       }, {
