@@ -4,9 +4,6 @@
       "dependencies": [{
         "name": "sarah/merriam_webster:latest",
         "alias": "merriam_webster"
-      }, {
-        "name": "transposit/merriam_webster:latest",
-        "alias": "merriam_webster2"
       }],
       "operations": [{
         "id": "hello_world",
