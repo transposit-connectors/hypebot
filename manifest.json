@@ -4,6 +4,9 @@
       "dependencies": [{
         "name": "sarah/merriam_webster:latest",
         "alias": "merriam_webster_dict"
+      }, {
+        "name": "sarah/emojidex:latest",
+        "alias": "emojidex"
       }],
       "operations": [{
         "id": "hello_world",
