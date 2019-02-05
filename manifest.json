@@ -23,6 +23,15 @@
           }],
           "tql": "SELECT meta.id, meta.uuid, fl, syns, shortdef FROM merriam_webster_dict.collegiate_dictionary_search\n  WHERE word=@word"
         }
+      }, {
+        "id": "extract_syn",
+        "function": {
+          "parameters": [{
+            "name": "dict_results",
+            "type": "ARRAY"
+          }],
+          "js": "extract_syn.js"
+        }
       }],
       "javascriptAPIVersion": "3"
     }
