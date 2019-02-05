@@ -52,7 +52,7 @@
             "name": "name",
             "type": "STRING"
           }],
-          "tql": "SELECT moji FROM emojidex.get_emoji\n  WHERE name=@name AND moji != `null`"
+          "tql": "SELECT moji FROM emojidex.get_emoji\n  WHERE name=@name"
         }
       }],
       "javascriptAPIVersion": "3"
