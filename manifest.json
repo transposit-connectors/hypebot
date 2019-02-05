@@ -7,9 +7,6 @@
       }, {
         "name": "sarah/emojidex:latest",
         "alias": "emojidex"
-      }, {
-        "name": "sarah/merriam_webster:latest",
-        "alias": "merriam_webster"
       }],
       "operations": [{
         "id": "hello_world",
