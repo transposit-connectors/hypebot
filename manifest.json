@@ -57,6 +57,15 @@
           }],
           "tql": "SELECT moji FROM emojidex.get_emoji\n  WHERE name=@name"
         }
+      }, {
+        "id": "collegiate_thesaurus_search",
+        "tql": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
+          "tql": "SELECT meta.syns FROM merriam_webster_thes.collegiate_thesaurus_search\n  WHERE word=@word expand by meta.syns"
+        }
       }],
       "javascriptAPIVersion": "3"
     }
