@@ -24,7 +24,8 @@
             "name": "word",
             "type": "STRING"
           }],
-          "tql": "SELECT meta.id, meta.uuid, hwi.hw, fl, syns, shortdef FROM merriam_webster_dict.collegiate_dictionary_search\n  WHERE word=@word"
+          "tql": "SELECT meta.id, meta.uuid, hwi.hw, fl, syns, shortdef FROM merriam_webster_dict.collegiate_dictionary_search\n  WHERE word=@word",
+          "cacheExpirySec": 86400
         }
       }, {
         "id": "extract_syn",
@@ -43,6 +44,15 @@
             "type": "STRING"
           }],
           "js": "word_search.js"
+        }
+      }, {
+        "id": "get_emoji",
+        "tql": {
+          "parameters": [{
+            "name": "name",
+            "type": "STRING"
+          }],
+          "tql": "SELECT moji FROM emojidex.get_emoji\n  WHERE name=@name AND moji != `null`"
         }
       }],
       "javascriptAPIVersion": "3"
