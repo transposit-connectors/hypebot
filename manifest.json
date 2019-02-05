@@ -1,6 +1,10 @@
 {
   "v2": {
     "transposit": {
+      "dependencies": [{
+        "name": "sarah/merriam_webster:latest",
+        "alias": "merriam_webster"
+      }],
       "operations": [{
         "id": "hello_world",
         "description": "Returns \"Hello, world\" in different languages",
