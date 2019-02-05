@@ -64,7 +64,7 @@
             "name": "word",
             "type": "STRING"
           }],
-          "tql": "SELECT meta.syns FROM merriam_webster_thes.collegiate_thesaurus_search\n  WHERE word=@word expand by meta.syns"
+          "tql": "SELECT meta.syns FROM merriam_webster_thes.collegiate_thesaurus_search\n  WHERE word=@word expand by meta.syns LIMIT 3"
         }
       }],
       "javascriptAPIVersion": "3"
