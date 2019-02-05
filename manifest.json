@@ -66,6 +66,15 @@
           }],
           "tql": "SELECT meta.syns FROM merriam_webster_thes.collegiate_thesaurus_search\n  WHERE word=@word expand by meta.syns LIMIT 3"
         }
+      }, {
+        "id": "search_emoji",
+        "tql": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM emojidex.search_emoji\n  WHERE $body=(SELECT {\n    'code_cont' : @word,\n  })"
+        }
       }],
       "javascriptAPIVersion": "3"
     }
