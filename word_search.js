@@ -13,7 +13,7 @@
     possible_terms = _.uniq(possible_terms.concat(flat_thes_results).map(r => r.toLowerCase()));
   }
 
-  console.log("possible_terms for ", params.word, possible_terms);
+  console.log(`possible_terms for ${params.word}`, possible_terms);
   /*
   for (let i in possible_terms) {
     const sanitized = possible_terms[i].replace(" ", "").replace("-", "");
