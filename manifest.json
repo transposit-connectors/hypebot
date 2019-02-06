@@ -75,6 +75,15 @@
           }],
           "tql": "SELECT emoji FROM emojidex.search_emoji\n  WHERE code_cont=@word expand by emoji"
         }
+      }, {
+        "id": "sentence_seeker",
+        "function": {
+          "parameters": [{
+            "name": "sentence",
+            "type": "STRING"
+          }],
+          "js": "sentence_seeker.js"
+        }
       }],
       "javascriptAPIVersion": "3"
     }
