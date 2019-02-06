@@ -2,9 +2,14 @@
   const releaseTitle = JSON.parse(http_event.body).items[0].title;
   console.log(releaseTitle);
   
-  api.run("this.execute_crawler");
-  const crawler_results = api.run("this.get_crawler_last_execution_results");
-  console.log(crawler_results[0].releaseNotes)
+  //api.run("this.execute_crawler");
+  const crawler_results = api.run("this.get_crawler_last_execution_results")[0].releaseNotes;
+  
+  const sentences = crawler_results.trim().split(/[\n\t]+/)
+  
+  console.log(sentences);
+  
+  console.log(api.run("this.sentence_seeker", {sentence: sentences[6]}))
   
   return {
     status_code: 200,

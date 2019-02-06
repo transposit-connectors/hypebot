@@ -14,6 +14,7 @@
   }
 
   console.log("possible_terms for ", params.word, possible_terms);
+  /*
   for (let i in possible_terms) {
     const sanitized = possible_terms[i].replace(" ", "").replace("-", "");
     try {
@@ -25,13 +26,17 @@
     } catch (e) {
       // nothing, the e exception message is worthless
     }
+  }*/
+  
+  for(let j in possible_terms) {
+    const res = api.run("this.search_emoji", {word: possible_terms[j]});
+    for (let i in res) {
+      const { moji, code } = res[i].emoji;
+      if (moji && code.length <= possible_terms[j].length * 2) {
+        console.log(`found :${res[i].emoji.code}: for search '${possible_terms[j]}' for ${params.word}`);
+        return res[i].emoji.moji;
+      }
+    };
   }
-  const res = api.run("this.search_emoji", params);
-  for (let i in res) {
-    if (res[i].emoji.moji) {
-      console.log(`found :${res[i].emoji.code}: for ${params.word}`);
-      return res[i].emoji.moji;
-    }
-  };
   return [];
 }
