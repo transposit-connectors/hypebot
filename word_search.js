@@ -13,27 +13,27 @@
     possible_terms = _.uniq(possible_terms.concat(flat_thes_results).map(r => r.toLowerCase()));
   }
 
-  console.log(`possible_terms for ${params.word}`, possible_terms);
-  /*
-  for (let i in possible_terms) {
-    const sanitized = possible_terms[i].replace(" ", "").replace("-", "");
+  console.log(`possible_terms for '${params.word}'`, possible_terms);
+  
+  for(let j in possible_terms) {
+    const sanitized = possible_terms[j].replace(" ", "").replace("-", "");
+    
     try {
       const emoj = api.run("this.get_emoji", {name: sanitized})
       if (emoj[0].moji) {
-        console.log(`found :${emoj[0].code}: for ${sanitized}`);
+        console.log(`found :${emoj[0].code}: for lookup '${sanitized}' for ${params.word}`);
         return emoj[0].moji;
       }
     } catch (e) {
       // nothing, the e exception message is worthless
     }
-  }*/
-  
-  for(let j in possible_terms) {
-    const res = api.run("this.search_emoji", {word: possible_terms[j]});
+    
+    
+    const res = api.run("this.search_emoji", {word: sanitized});
     for (let i in res) {
       const { moji, code } = res[i].emoji;
-      if (moji && code.length <= possible_terms[j].length * 2) {
-        console.log(`found :${res[i].emoji.code}: for search '${possible_terms[j]}' for ${params.word}`);
+      if (moji && code.length <= sanitized.length * 2) {
+        console.log(`found :${res[i].emoji.code}: for search '${sanitized}' for ${params.word}`);
         return res[i].emoji.moji;
       }
     };
