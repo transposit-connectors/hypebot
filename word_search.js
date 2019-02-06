@@ -16,7 +16,7 @@
   console.log(`possible_terms for '${params.word}'`, possible_terms);
   
   for(let j in possible_terms) {
-    const sanitized = possible_terms[j].replace(" ", "").replace("-", "");
+    const sanitized = possible_terms[j].replace(/[ -]+/g, "");
     
     try {
       const emoj = api.run("this.get_emoji", {name: sanitized})
