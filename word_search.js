@@ -19,6 +19,7 @@
     try {
       const emoj = api.run("this.get_emoji", {name: sanitized})
       if (emoj[0].moji) {
+        console.log(`found :${emoj[0].code}: for ${sanitized}`);
         return emoj[0].moji;
       }
     } catch (e) {
@@ -28,6 +29,7 @@
   const res = api.run("this.search_emoji", params);
   for (let i in res) {
     if (res[i].emoji.moji) {
+      console.log(`found :${res[i].emoji.code}: for ${params.word}`);
       return res[i].emoji.moji;
     }
   };
