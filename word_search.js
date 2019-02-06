@@ -1,6 +1,6 @@
 (params) => {
   var _ = require('underscore.js');
-  const dict_results = api.run("this.def_and_syn", params);
+  const dict_results = api.run("this.filtered_def_and_syn", params);
   let possible_terms = [];  
   if (_.isEmpty(dict_results) || _.isEmpty(dict_results[0])) {
     // we have a weird word, the merriam apis are going to give us straight synonyms instead    

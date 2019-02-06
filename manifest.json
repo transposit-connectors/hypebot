@@ -46,7 +46,8 @@
             "name": "word",
             "type": "STRING"
           }],
-          "js": "word_search.js"
+          "js": "word_search.js",
+          "cacheExpirySec": 846000
         }
       }, {
         "id": "get_emoji",
@@ -83,6 +84,15 @@
             "type": "STRING"
           }],
           "js": "sentence_seeker.js"
+        }
+      }, {
+        "id": "filtered_def_and_syn",
+        "tql": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM this.def_and_syn\n  WHERE word=@word AND fl != \"indefinite article\" AND fl != \"definite article\" AND fl != \"preposition\" AND fl != \"conjunction\" AND fl != \"abbreviation\" AND fl != \"prefix\" AND fl != \"noun suffix\" AND fl != \"adjective suffix\" AND fl !=\"combining form\""
         }
       }],
       "javascriptAPIVersion": "3"
