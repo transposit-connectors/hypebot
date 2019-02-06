@@ -8,7 +8,7 @@
   possible_terms = _.uniq(possible_terms.concat(flat_thes_results).map(r => r.toLowerCase()));
   console.log("possible_terms", possible_terms);
   for (let i in possible_terms) {
-    const sanitized = possible_terms[i].toLowerCase().replace(" ", "").replace("-", "");
+    const sanitized = possible_terms[i].replace(" ", "").replace("-", "");
     try {
       const emoj = api.run("this.get_emoji", {name: sanitized})
       if (emoj[0].moji) {
