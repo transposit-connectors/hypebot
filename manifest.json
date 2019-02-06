@@ -94,6 +94,22 @@
           }],
           "tql": "SELECT * FROM this.def_and_syn\n  WHERE word=@word AND fl != \"indefinite article\" AND fl != \"definite article\" AND fl != \"preposition\" AND fl != \"conjunction\" AND fl != \"abbreviation\" AND fl != \"prefix\" AND fl != \"noun suffix\" AND fl != \"adjective suffix\" AND fl !=\"combining form\""
         }
+      }, {
+        "id": "webhook",
+        "function": {
+          "parameters": [{
+            "name": "http_event",
+            "default": {
+              "text": "{\"http_method\": \"GET\", \"query_parameters\": {}, \"headers\": {}, \"body\": \"\"}"
+            },
+            "type": "OBJECT"
+          }],
+          "js": "webhook.js"
+        },
+        "access": {
+          "requireApiKey": true,
+          "webhook": true
+        }
       }],
       "javascriptAPIVersion": "3"
     }
