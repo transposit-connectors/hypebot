@@ -10,6 +10,9 @@
       }, {
         "name": "sarah/merriam_webster:latest",
         "alias": "merriam_webster_thes"
+      }, {
+        "name": "transposit/apify_crawler:v1.*.*",
+        "alias": "apify_crawler"
       }],
       "operations": [{
         "id": "hello_world",
