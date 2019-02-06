@@ -73,7 +73,7 @@
             "name": "word",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM emojidex.search_emoji\n  WHERE $body=(SELECT {\n    'code_cont' : @word,\n  })"
+          "tql": "SELECT emoji FROM emojidex.search_emoji\n  WHERE code_cont=@word expand by emoji"
         }
       }],
       "javascriptAPIVersion": "3"
