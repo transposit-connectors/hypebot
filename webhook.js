@@ -9,7 +9,9 @@
   
   console.log(sentences);
   
-  console.log(api.run("this.sentence_seeker", {sentence: sentences[6]}))
+  for (i=3; i<sentences.length; i++) {
+    console.log(api.run("this.sentence_seeker", {sentence: sentences[i]}))
+  }
   
   return {
     status_code: 200,
