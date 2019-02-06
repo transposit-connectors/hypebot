@@ -124,6 +124,16 @@
           "tql": "SELECT pageFunctionResult.releaseNotes FROM apify_crawler.get_crawler_last_execution_results\n  WHERE user_id='sZs7Ng4R5xrAR756J'\n  AND crawler_id='EoP97LXxAykJrQPZG'"
         }
       }],
+      "dataConnections": [{
+        "ref": "emojidex",
+        "overrides": {
+          "swagger": {
+            "executionLimits": {
+              "maxApiCalls": 500
+            }
+          }
+        }
+      }],
       "javascriptAPIVersion": "3"
     }
   }
