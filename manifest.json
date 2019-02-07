@@ -129,7 +129,7 @@
         "overrides": {
           "swagger": {
             "executionLimits": {
-              "maxApiCalls": 500
+              "maxApiCalls": 5000
             }
           }
         }
