@@ -95,7 +95,8 @@
       }, {
         "id": "emoji_shortcodes",
         "function": {
-          "js": "emoji_shortcodes.js"
+          "js": "emoji_shortcodes.js",
+          "cacheExpirySec": 86400
         }
       }],
       "dataConnections": [{
