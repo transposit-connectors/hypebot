@@ -11,7 +11,7 @@
       const { text, channel, ts } = body.event;
       console.log(text)
       const emoji = api.run("this.sentence_seeker", {sentence: text});
-      emoji.map(e => api.run("this.add_reactions", {name: e, channel , ts});
+      emoji.map(e => api.run("this.add_reactions", {name: e, channel , ts}));
     }
   }
 
