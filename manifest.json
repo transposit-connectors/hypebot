@@ -47,15 +47,6 @@
           "cacheExpirySec": 84600
         }
       }, {
-        "id": "get_emoji",
-        "tql": {
-          "parameters": [{
-            "name": "name",
-            "type": "STRING"
-          }],
-          "tql": "SELECT code, moji FROM emojidex.get_emoji\n  WHERE name=@name"
-        }
-      }, {
         "id": "collegiate_thesaurus_search",
         "tql": {
           "parameters": [{
@@ -63,15 +54,6 @@
             "type": "STRING"
           }],
           "tql": "SELECT meta.syns FROM merriam_webster_thes.collegiate_thesaurus_search\n  WHERE word=@word expand by meta.syns LIMIT 3"
-        }
-      }, {
-        "id": "search_emoji",
-        "tql": {
-          "parameters": [{
-            "name": "word",
-            "type": "STRING"
-          }],
-          "tql": "SELECT emoji FROM emojidex.search_emoji\n  WHERE code_cont=@word expand by emoji"
         }
       }, {
         "id": "sentence_seeker",
@@ -106,16 +88,6 @@
         "access": {
           "requireApiKey": true,
           "webhook": true
-        }
-      }, {
-        "id": "execute_crawler",
-        "tql": {
-          "tql": "SELECT * FROM apify_crawler.execute_crawler\n  WHERE user_id='sZs7Ng4R5xrAR756J'\n  AND crawler_id='EoP97LXxAykJrQPZG'\n  AND wait='120'"
-        }
-      }, {
-        "id": "get_crawler_last_execution_results",
-        "tql": {
-          "tql": "SELECT pageFunctionResult.releaseNotes FROM apify_crawler.get_crawler_last_execution_results\n  WHERE user_id='sZs7Ng4R5xrAR756J'\n  AND crawler_id='EoP97LXxAykJrQPZG'"
         }
       }],
       "dataConnections": [{
