@@ -19,7 +19,7 @@
     const sanitized = possible_terms[j].replace(/[ -]+/g, "");
     
     try {
-      const emoj = api.run("this.get_emoji", {name: sanitized})
+      const emoj = api.query("SELECT code, moji FROM emojidex.get_emoji WHERE name=@name", {name: sanitized})
       if (emoj[0].moji) {
         console.log(`found :${emoj[0].code}: for lookup '${sanitized}' for ${params.word}`);
         return emoj[0].moji;
@@ -29,7 +29,7 @@
     }
     
     
-    const res = api.run("this.search_emoji", {word: sanitized});
+    const res = api.query("SELECT emoji FROM emojidex.search_emoji WHERE code_cont=@word expand by emoji", {word: sanitized});
     for (let i in res) {
       const { moji, code } = res[i].emoji;
       if (moji && code.length <= sanitized.length * 2) {
