@@ -116,9 +116,9 @@
           "tql": "SELECT * FROM raw_slack_bot.reactions_add\n  WHERE $body=(SELECT {\n    'name' : @name,\n    'channel' : @channel,\n    'timestamp' : @ts\n  })"
         }
       }, {
-        "id": "emoji_list",
+        "id": "list_emoji",
         "tql": {
-          "tql": "SELECT * FROM raw_slack_bot.emoji_list"
+          "tql": "SELECT * FROM slack.list_emoji"
         }
       }],
       "dataConnections": [{

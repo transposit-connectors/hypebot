@@ -15,8 +15,12 @@
 
   console.log(`possible_terms for '${params.word}'`, possible_terms);
   
-  const emoji_list = api.run("this.emoji_shortcodes");
+  let emoji_list = api.run("this.emoji_shortcodes");
+//  console.log(Object.keys(api.run("this.list_emoji")[0].emoji))
+  emoji_list = emoji_list.concat(Object.keys(api.run("this.list_emoji")[0].emoji));
   let results = [];
+  
+  possible_terms.unshift(params.word);
   
   for(let j in possible_terms) {
     const sanitized = possible_terms[j].replace(/[ -]+/g, "");    
