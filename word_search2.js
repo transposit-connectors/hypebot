@@ -12,7 +12,7 @@
     possible_terms = api.run("merriam_webster_dict.collegiate_dictionary_search", params);
   } else {
     const results = api.run("this.extract_syn", {dict_results})
-    possible_terms =  _.uniq(_.flatten(results.map(res => [res.id, ...res.syns])));
+    possible_terms =  _.uniq(_.flatten(results.map(res => [res.id])));
     const thes_results = api.run("this.collegiate_thesaurus_search", params);
     const flat_thes_results = _.flatten(thes_results.slice(0,3).map(res => res.syns.slice(0, 1)));
     possible_terms = _.uniq(possible_terms.concat(flat_thes_results).map(r => r.toLowerCase()));
