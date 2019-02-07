@@ -19,8 +19,8 @@
   let results = [];
   
   for(let j in possible_terms) {
-    const sanitized = possible_terms[j].replace(/[ -]+/g, "_");    
-    const res = _.filter(emoji_list, (code) => _.contains(code.split("_"), sanitized))
+    const sanitized = possible_terms[j].replace(/[ -]+/g, "");    
+    const res = _.filter(emoji_list, (code) => _.contains(code.split(/[_-]+/), sanitized))
 
     for (let i in res) {
       if (res[i] && res[i].length <= sanitized.length * 2) {
