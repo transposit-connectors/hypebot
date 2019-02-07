@@ -107,6 +107,21 @@
           }],
           "js": "word_search2.js"
         }
+      }, {
+        "id": "add_reactions",
+        "tql": {
+          "parameters": [{
+            "name": "name",
+            "type": "STRING"
+          }, {
+            "name": "channel",
+            "type": "STRING"
+          }, {
+            "name": "ts",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM slack.add_reactions\n  WHERE $body=(SELECT {\n    'name' : @name,\n    'channel' : @channel,\n    'timestamp' : @ts\n  })"
+        }
       }],
       "dataConnections": [{
         "ref": "emojidex",
