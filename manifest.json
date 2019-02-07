@@ -10,6 +10,9 @@
       }, {
         "name": "transposit/slack:v1.*.*",
         "alias": "slack"
+      }, {
+        "name": "sarah/raw_slack_bot:latest",
+        "alias": "raw_slack_bot"
       }],
       "operations": [{
         "id": "hello_world",
@@ -38,6 +41,16 @@
             "type": "ARRAY"
           }],
           "js": "extract_syn.js"
+        }
+      }, {
+        "id": "word_search",
+        "function": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
+          "js": "word_search.js",
+          "cacheExpirySec": 84600
         }
       }, {
         "id": "collegiate_thesaurus_search",
