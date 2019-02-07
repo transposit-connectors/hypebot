@@ -8,8 +8,10 @@
     };
   } else {
     if (body.event.user === "U8749R3T9") {
-      console.log(body.event.text)
-      console.log(api.run("this.sentence_seeker", {sentence: body.event.text}));
+      const { text, channel, ts } = body.event;
+      console.log(text)
+      const emoji = api.run("this.sentence_seeker", {sentence: text});
+      emoji.map(e => api.run("this.add_reactions", {name: e, channel , ts});
     }
   }
 
