@@ -92,6 +92,11 @@
           "requireApiKey": true,
           "webhook": true
         }
+      }, {
+        "id": "emoji_shortcodes",
+        "function": {
+          "js": "emoji_shortcodes.js"
+        }
       }],
       "dataConnections": [{
         "ref": "emojidex",
