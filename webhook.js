@@ -9,9 +9,12 @@
   
   console.log(sentences);
   
+  let result = [];
+  
   for (i=3; i<sentences.length; i++) {
-    console.log(api.run("this.sentence_seeker", {sentence: sentences[i]}))
+    result.push(api.run("this.sentence_seeker", {sentence: sentences[i]}));
   }
+  console.log(result);
   
   return {
     status_code: 200,
