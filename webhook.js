@@ -7,8 +7,10 @@
       body: body.challenge
     };
   } else {
-    console.log(body.event.text)
-    console.log(api.run("this.sentence_seeker", {sentence: body.event.text}));
+    if (body.event.user === "U8749R3T9") {
+      console.log(body.event.text)
+      console.log(api.run("this.sentence_seeker", {sentence: body.event.text}));
+    }
   }
 
   
