@@ -14,18 +14,6 @@
       emoji.map(e => api.run("this.add_reactions", {name: e, channel , ts}));
     }
   }
-
-  
-/*  const sentences = crawler_results.trim().split(/[\n\t]+/)
-  
-  console.log(sentences);
-  
-  let result = [];
-  
-  for (i=3; i<sentences.length; i++) {
-    result.push(api.run("this.sentence_seeker", {sentence: sentences[i]}));
-  }
-  console.log(result);*/
   
   return {
     status_code: 200,
