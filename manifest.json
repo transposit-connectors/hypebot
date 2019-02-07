@@ -132,6 +132,17 @@
             }
           }
         }
+      }, {
+        "ref": "slack.raw",
+        "overrides": {
+          "swagger": {
+            "oauthConfig": {
+              "scope": "chat:write:user chat:write:bot im:write im:read channels:history channels:read channels:write users:read users.profile:write files:write:user search:read emoji:read groups:read groups:write dnd:write dnd:read"
+            },
+            "executionLimits": {
+            }
+          }
+        }
       }],
       "javascriptAPIVersion": "3"
     }
