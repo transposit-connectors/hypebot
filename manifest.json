@@ -7,6 +7,9 @@
       }, {
         "name": "sarah/merriam_webster:latest",
         "alias": "merriam_webster_thes"
+      }, {
+        "name": "transposit/slack:v1.*.*",
+        "alias": "slack"
       }],
       "operations": [{
         "id": "hello_world",
