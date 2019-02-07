@@ -6,6 +6,8 @@
       headers: { "Content-Type": "text/plain" },
       body: body.challenge
     };
+  } else {
+    console.log(body)
   }
 
   
