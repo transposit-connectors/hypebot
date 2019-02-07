@@ -1,5 +1,10 @@
 (params) => {
   var _ = require('underscore.js');
+  
+  if (_.isEmpty(params.word)) {
+    return [];
+  }
+  
   const dict_results = api.run("this.filtered_def_and_syn", params);
   let possible_terms = [];  
   if (_.isEmpty(dict_results) || _.isEmpty(dict_results[0])) {
