@@ -13,8 +13,7 @@
   })).map(possible_terms => {
     let results = []
     for(let j in possible_terms) {
-      const sanitized = possible_terms[j].replace(/[ ]+/g, "");    
-      console.log(sanitized)
+      const sanitized = possible_terms[j].replace(/[ ]+/g, "");
       const res = _.filter(emoji_list, (code) => sanitized === code || _.indexOf(code.split(/[_-]+/), sanitized) >= 0)
 
       for (let i in res) {
