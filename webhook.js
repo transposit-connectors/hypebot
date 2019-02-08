@@ -19,7 +19,6 @@
       }
     }
   }
-  
   return {
     status_code: 200,
     headers: { "Content-Type": "text/plain" },

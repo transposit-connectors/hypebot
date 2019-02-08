@@ -5,7 +5,7 @@
   emoji_list = emoji_list.concat(Object.keys(api.run("this.list_emoji")[0].emoji));
   let results = [];
   
-  return _.flatten(api.runBulk(params.sentence.replace(/\b(it|in|an|a|the|from|to|with|of|and|but|so|for|are|is|that|this)\b/g, "").split(/[ \/,:;.?!<>]+/).map(s => {
+  return _.flatten(api.runBulk(params.sentence.replace(/\b(it|in|an|a|the|from|to|with|of|and|but|so|for|are|is|be|being|was|that|this)\b/g, "").split(/[ \/,:;.?!<>]+/).map(s => {
     return {
       operation: "this.word_search2",
       parameters: {word: s},
