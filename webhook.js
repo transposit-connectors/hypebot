@@ -8,10 +8,15 @@
     };
   } else {
     if (body.event.user === "U8749R3T9" || body.event.user === "U9YC7F24A") {
-      const { text, channel, ts } = body.event;
-      console.log(text)
-      const emoji = api.run("this.sentence_seeker", {sentence: text});
-      emoji.map(e => api.run("this.add_reactions", {name: e, channel , ts}));
+      if (body.event.type == "reaction_added") {
+        const { reaction, item: { channel, ts }} = body.event;
+        api.run("this.add_reactions", {name: reaction, channel , ts})
+      } else {
+        const { text, channel, ts } = body.event;
+        console.log(text)
+        const emoji = api.run("this.sentence_seeker", {sentence: text});
+        emoji.map(e => api.run("this.add_reactions", {name: e, channel , ts}));
+      }
     }
   }
   
