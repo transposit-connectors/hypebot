@@ -15,9 +15,9 @@
     for(let j in possible_terms) {
       const sanitized = possible_terms[j].replace(/[ ]+/g, "");
       const res = _.filter(emoji_list, (code) => sanitized === code || _.indexOf(code.split(/[_-]+/), sanitized) >= 0)
-
+		console.log(res)
       for (let i in res) {
-        if (res[i] && res[i].length <= sanitized.length * 2) {
+        if (res[i]) {
           console.log(`found :${res[i]}: for search '${sanitized}' for ${possible_terms[0]}`);
           results.push(res[i])
         }
