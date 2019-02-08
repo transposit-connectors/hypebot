@@ -1,5 +1,4 @@
-(params) => {
-  return [
+() => [
   "hash",
   "keycap_star",
   "zero",
@@ -1569,4 +1568,3 @@
   "congratulations",
   "secret"
 ]
-}
