@@ -14,7 +14,8 @@
     let results = []
     for(let j in possible_terms) {
       const sanitized = possible_terms[j].replace(/[ ]+/g, "");    
-      const res = _.filter(emoji_list, (code) => _.indexOf(code.split(/[_-]+/), sanitized) >= 0)
+      console.log(sanitized)
+      const res = _.filter(emoji_list, (code) => sanitized === code || _.indexOf(code.split(/[_-]+/), sanitized) >= 0)
 
       for (let i in res) {
         if (res[i] && res[i].length <= sanitized.length * 2) {
