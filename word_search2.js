@@ -18,25 +18,10 @@
     possible_terms = _.uniq(possible_terms.concat(flat_thes_results).map(r => r.toLowerCase()));
   }
 
+  possible_terms.unshift(params.word);
+  possible_terms = _.uniq(possible_terms).splice(0,5);
+  
   console.log(`possible_terms for '${params.word}'`, possible_terms);
   
-  let emoji_list = api.run("this.emoji_shortcodes");
-
-  emoji_list = emoji_list.concat(Object.keys(api.run("this.list_emoji")[0].emoji));
-  let results = [];
-  
-  possible_terms.unshift(params.word);
-  
-  for(let j in possible_terms) {
-    const sanitized = possible_terms[j].replace(/[ -]+/g, "");    
-    const res = _.filter(emoji_list, (code) => _.contains(code.split(/[_-]+/), sanitized))
-
-    for (let i in res) {
-      if (res[i] && res[i].length <= sanitized.length * 2) {
-        console.log(`found :${res[i]}: for search '${sanitized}' for ${params.word}`);
-        results.push(res[i])
-      }
-    };
-  }
-  return results;
+  return possible_terms;
 }
