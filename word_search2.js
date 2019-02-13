@@ -19,7 +19,7 @@
   }
 
   possible_terms.unshift(params.word);
-  possible_terms = _.uniq(_.filter(possible_terms, (t) => typeof t == "string")).splice(0,5);
+  possible_terms = _.uniq(_.filter(possible_terms, (t) => typeof t == "string")).splice(0,1);
   
   console.log(`possible_terms for '${params.word}'`, possible_terms);
   
