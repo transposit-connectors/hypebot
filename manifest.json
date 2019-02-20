@@ -21,7 +21,6 @@
           "js": "hello_world.js"
         },
         "access": {
-          "requireUser": true
         }
       }, {
         "id": "def_and_syn",
