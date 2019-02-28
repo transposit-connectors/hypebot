@@ -9,13 +9,13 @@
       body: body.challenge
     };
   } else {
-    const { user, type } = body.event;
+    const { user, type, subtype } = body.event;
     // don't hype everyone, all the time
     if (api.run("this.users_with_hype").includes(user) || randomHype()) {
       if (type == "reaction_added") {
         const { reaction, item: { channel, ts }} = body.event;
         api.run("this.add_reactions", {name: reaction, channel , ts})
-      } else if (type == "message") {
+      } else if (type == "message" && subtype == "bot_message" /* don't respond to other bots */) {
         const { text, channel, ts } = body.event;
         console.log(text)
         const emoji = api.run("this.sentence_seeker", {sentence: text, hype_level});
