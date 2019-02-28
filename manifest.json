@@ -48,6 +48,12 @@
           "parameters": [{
             "name": "sentence",
             "type": "STRING"
+          }, {
+            "name": "hype_level",
+            "default": {
+              "text": "5"
+            },
+            "type": "STRING"
           }],
           "js": "sentence_seeker.js"
         }

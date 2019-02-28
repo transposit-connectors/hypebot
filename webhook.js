@@ -16,7 +16,7 @@
       } else if (type == "message") {
         const { text, channel, ts } = body.event;
         console.log(text)
-        const emoji = api.run("this.sentence_seeker", {sentence: text});
+        const emoji = api.run("this.sentence_seeker", {sentence: text, hype_level});
         if (emoji.length == 0 && .1 * hype_level > Math.random()) {
           	api.run("this.add_reactions", {name: api.run("this.positive_affirmation")[0], channel , ts})
         } else {
