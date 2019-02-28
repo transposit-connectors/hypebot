@@ -119,7 +119,7 @@
             "name": "ts",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM raw_slack_bot.reactions_add\n  WHERE $body=(SELECT {\n    'name' : @name,\n    'channel' : @channel,\n    'timestamp' : @ts\n  })"
+          "tql": "SELECT * FROM slackbot.add_reactions\n  WHERE $body=(SELECT {\n    'name' : @name,\n    'channel' : @channel,\n    'timestamp' : @ts\n  })"
         }
       }, {
         "id": "list_emoji",
