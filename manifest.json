@@ -144,6 +144,11 @@
         "function": {
           "js": "word_search.js"
         }
+      }, {
+        "id": "get_dict_words",
+        "tql": {
+          "tql": "SELECT id FROM mw_dictionary.get_short_definitions\n  WHERE headword='move' AND partOfSpeech != \"indefinite article\" AND partOfSpeech != \"definite article\" AND partOfSpeech != \"preposition\" AND partOfSpeech != \"conjunction\" AND partOfSpeech != \"abbreviation\" AND partOfSpeech != \"prefix\" AND partOfSpeech != \"noun suffix\" AND partOfSpeech != \"adjective suffix\" AND partOfSpeech !=\"combining form\" LIMIT 5"
+        }
       }],
       "dataConnections": [{
         "ref": "emojidex",
