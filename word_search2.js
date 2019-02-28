@@ -2,6 +2,7 @@
   var _ = require('underscore.js');
   
   if (_.isEmpty(params.word)) {
+    // sometimes our string parsing is not so good
     return [];
   }
   
