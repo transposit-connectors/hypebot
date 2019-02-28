@@ -19,6 +19,9 @@
       }, {
         "name": "transposit/mw_dictionary:v1.*.*",
         "alias": "mw_dictionary"
+      }, {
+        "name": "transposit/mw_thesaurus:v1.*.*",
+        "alias": "mw_thesaurus"
       }],
       "operations": [{
         "id": "def_and_syn",
