@@ -8,8 +8,7 @@
     };
   } else {
     const { user, type } = body.event;
-    
-    if (api.run("this.users_with_hype").includes(user)) {
+    if (api.run("this.users_with_hype").includes(user) || .1 * hype_level > Math.random()) {
       if (type == "reaction_added") {
         const { reaction, item: { channel, ts }} = body.event;
         api.run("this.add_reactions", {name: reaction, channel , ts})
