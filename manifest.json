@@ -59,9 +59,6 @@
             "type": "STRING"
           }],
           "js": "sentence_seeker.js"
-        },
-        "access": {
-          "requireApiKey": true
         }
       }, {
         "id": "filtered_def_and_syn",
