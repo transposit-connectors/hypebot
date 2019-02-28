@@ -152,6 +152,15 @@
         "tql": {
           "tql": "SELECT id FROM mw_dictionary.get_short_definitions\n  WHERE headword='move' AND partOfSpeech != \"indefinite article\" AND partOfSpeech != \"definite article\" AND partOfSpeech != \"preposition\" AND partOfSpeech != \"conjunction\" AND partOfSpeech != \"abbreviation\" AND partOfSpeech != \"prefix\" AND partOfSpeech != \"noun suffix\" AND partOfSpeech != \"adjective suffix\" AND partOfSpeech !=\"combining form\" LIMIT 5"
         }
+      }, {
+        "id": "get_short_results",
+        "tql": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
+          "tql": "SELECT synonyms FROM mw_thesaurus.get_short_results\n  WHERE headword=@word expand by synonyms"
+        }
       }],
       "dataConnections": [{
         "ref": "emojidex",
