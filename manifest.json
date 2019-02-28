@@ -119,6 +119,11 @@
         "tql": {
           "tql": "SELECT * FROM slack.list_emoji"
         }
+      }, {
+        "id": "users_with_hype",
+        "function": {
+          "js": "users_with_hype.js"
+        }
       }],
       "dataConnections": [{
         "ref": "emojidex",
