@@ -15,7 +15,7 @@
       if (type == "reaction_added") {
         const { reaction, item: { channel, ts }} = body.event;
         api.run("this.add_reactions", {name: reaction, channel , ts})
-      } else if (type == "message" && subtype == "bot_message" /* don't respond to other bots */) {
+      } else if (type == "message" && subtype != "bot_message" /* don't respond to other bots */) {
         const { text, channel, ts } = body.event;
         console.log(text)
         const emoji = api.run("this.sentence_seeker", {sentence: text, hype_level});
