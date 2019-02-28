@@ -15,14 +15,6 @@
         "alias": "raw_slack_bot"
       }],
       "operations": [{
-        "id": "hello_world",
-        "description": "Returns \"Hello, world\" in different languages",
-        "function": {
-          "js": "hello_world.js"
-        },
-        "access": {
-        }
-      }, {
         "id": "def_and_syn",
         "tql": {
           "parameters": [{
@@ -77,6 +69,12 @@
               "text": "{\"http_method\": \"GET\", \"query_parameters\": {}, \"headers\": {}, \"body\": \"\"}"
             },
             "type": "OBJECT"
+          }, {
+            "name": "hype_level",
+            "default": {
+              "text": "5"
+            },
+            "type": "INTEGER"
           }],
           "js": "webhook.js"
         },
@@ -123,6 +121,11 @@
         "id": "users_with_hype",
         "function": {
           "js": "users_with_hype.js"
+        }
+      }, {
+        "id": "positive_affirmation",
+        "function": {
+          "js": "positive_affirmation.js"
         }
       }],
       "dataConnections": [{
