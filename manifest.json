@@ -136,6 +136,11 @@
         "function": {
           "js": "positive_affirmation.js"
         }
+      }, {
+        "id": "word_search",
+        "function": {
+          "js": "word_search.js"
+        }
       }],
       "dataConnections": [{
         "ref": "emojidex",
