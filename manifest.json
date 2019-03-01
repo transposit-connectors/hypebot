@@ -145,6 +145,10 @@
       }, {
         "id": "word_search",
         "function": {
+          "parameters": [{
+            "name": "word",
+            "type": "STRING"
+          }],
           "js": "word_search.js"
         }
       }, {
