@@ -5,9 +5,6 @@
         "name": "sarah/merriam_webster:latest",
         "alias": "merriam_webster_dict"
       }, {
-        "name": "sarah/merriam_webster:latest",
-        "alias": "merriam_webster_thes"
-      }, {
         "name": "transposit/slack:v1.*.*",
         "alias": "slack"
       }, {
