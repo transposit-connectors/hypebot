@@ -2,9 +2,6 @@
   "v2": {
     "transposit": {
       "dependencies": [{
-        "name": "sarah/merriam_webster:latest",
-        "alias": "merriam_webster_dict"
-      }, {
         "name": "transposit/slack:v1.*.*",
         "alias": "slack"
       }, {
