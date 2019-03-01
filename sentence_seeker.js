@@ -3,7 +3,7 @@
   const boringWordsFinder = /\b(it|in|an|on|in|a|the|from|to|with|of|and|but|so|for|are|is|be|being|was|that|this)\b/g;
   const wordSeparators = /[ \/,:;.?!<>"']+/g
   // a list of all emoji shortcodes concat with any custom slack shortcodes
-  const emojiList = api.run("this.emoji_shortcodes").concat(Object.keys(api.run("this.list_emoji")[0].emoji));
+  const emojiList = api.run("this.emoji_shortcodes").concat(Object.keys(api.query("SELECT * FROM slack.list_emoji")[0].emoji));
 
   let results = [];
   const wordsInASentence = params.sentence.replace(boringWordsFinder, "").split(wordSeparators);

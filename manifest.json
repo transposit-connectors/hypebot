@@ -82,11 +82,6 @@
           "tql": "SELECT * FROM slackbot.add_reactions\n  WHERE $body=(SELECT {\n    'name' : @name,\n    'channel' : @channel,\n    'timestamp' : @ts\n  })"
         }
       }, {
-        "id": "list_emoji",
-        "tql": {
-          "tql": "SELECT * FROM slack.list_emoji"
-        }
-      }, {
         "id": "users_with_hype",
         "function": {
           "js": "users_with_hype.js"
