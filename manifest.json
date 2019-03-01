@@ -24,34 +24,6 @@
         "alias": "mw_thesaurus"
       }],
       "operations": [{
-        "id": "def_and_syn",
-        "tql": {
-          "parameters": [{
-            "name": "word",
-            "type": "STRING"
-          }],
-          "tql": "\nSELECT meta.id, meta.uuid, hwi.hw, fl, syns, shortdef FROM merriam_webster_dict.collegiate_dictionary_search\n  WHERE word=@word LIMIT 3 /* if it's not in the first 3, it'll probably never happen*/",
-          "cacheExpirySec": 86400
-        }
-      }, {
-        "id": "extract_syn",
-        "function": {
-          "parameters": [{
-            "name": "dict_results",
-            "type": "ARRAY"
-          }],
-          "js": "extract_syn.js"
-        }
-      }, {
-        "id": "collegiate_thesaurus_search",
-        "tql": {
-          "parameters": [{
-            "name": "word",
-            "type": "STRING"
-          }],
-          "tql": "SELECT meta.syns FROM merriam_webster_thes.collegiate_thesaurus_search\n  WHERE word=@word expand by meta.syns LIMIT 3"
-        }
-      }, {
         "id": "sentence_seeker",
         "function": {
           "parameters": [{
@@ -65,15 +37,6 @@
             "type": "STRING"
           }],
           "js": "sentence_seeker.js"
-        }
-      }, {
-        "id": "filtered_def_and_syn",
-        "tql": {
-          "parameters": [{
-            "name": "word",
-            "type": "STRING"
-          }],
-          "tql": "SELECT * FROM this.def_and_syn\n  WHERE word=@word AND fl != \"indefinite article\" AND fl != \"definite article\" AND fl != \"preposition\" AND fl != \"conjunction\" AND fl != \"abbreviation\" AND fl != \"prefix\" AND fl != \"noun suffix\" AND fl != \"adjective suffix\" AND fl !=\"combining form\""
         }
       }, {
         "id": "webhook",
@@ -141,11 +104,6 @@
             "type": "STRING"
           }],
           "js": "word_search.js"
-        }
-      }, {
-        "id": "get_dict_words",
-        "tql": {
-          "tql": "SELECT id FROM mw_dictionary.get_short_definitions\n  WHERE headword='move' AND partOfSpeech != \"indefinite article\" AND partOfSpeech != \"definite article\" AND partOfSpeech != \"preposition\" AND partOfSpeech != \"conjunction\" AND partOfSpeech != \"abbreviation\" AND partOfSpeech != \"prefix\" AND partOfSpeech != \"noun suffix\" AND partOfSpeech != \"adjective suffix\" AND partOfSpeech !=\"combining form\" LIMIT 5"
         }
       }, {
         "id": "get_short_results",
