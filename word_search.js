@@ -2,7 +2,7 @@
   const _ = require('underscore.js');
   if (_.isEmpty(params.word)) {
     // sometimes our string parsing is not so good
-    return [];
+    return [params.word];
   }
   try {
     const synonyms = api.run("this.get_short_results", {word:params.word});
@@ -10,6 +10,6 @@
     console.log(`possibleTerms for '${params.word}'`, possibleTerms);
     return possibleTerms;
   } catch (e) {
-    return [];
+    return [params.word];
   }
 }
