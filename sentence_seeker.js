@@ -9,7 +9,7 @@
   const wordsInASentence = params.sentence.replace(boringWordsFinder, "").split(wordSeparators);
   // search for every word in the sentence in parallel
   return _.flatten(api.runBulk(wordsInASentence.map(word => ({
-      operation: "this.word_search2",
+      operation: "this.word_search",
       parameters: {word: word},
     })
   )).map(possibleTerms => {
@@ -22,9 +22,6 @@
           console.log(`found :${matchingShortcodes[scIdx]}: for search '${sanitized}' for ${possibleTerms[0]}`);
           results.push(matchingShortcodes[scIdx])
         }
-      }
-      if (results.length > params.hype_level) {
-        break;
       }
     }
     // this is a terrible way to sort, but the result array should not be that large.

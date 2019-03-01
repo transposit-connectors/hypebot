@@ -163,7 +163,7 @@
             "name": "word",
             "type": "STRING"
           }],
-          "tql": "SELECT synonyms FROM mw_thesaurus.get_short_results\n  WHERE headword=@word expand by synonyms"
+          "tql": "SELECT synonyms FROM mw_thesaurus.get_short_results\n  WHERE headword=@word expand by synonyms limit 5"
         }
       }],
       "dataConnections": [{
