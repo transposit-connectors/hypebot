@@ -104,15 +104,6 @@
           "cacheExpirySec": 86400
         }
       }, {
-        "id": "word_search2",
-        "function": {
-          "parameters": [{
-            "name": "word",
-            "type": "STRING"
-          }],
-          "js": "word_search2.js"
-        }
-      }, {
         "id": "add_reactions",
         "tql": {
           "parameters": [{
