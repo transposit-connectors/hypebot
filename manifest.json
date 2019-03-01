@@ -8,9 +8,6 @@
         "name": "transposit/slack:v1.*.*",
         "alias": "slackbot"
       }, {
-        "name": "transposit/mw_dictionary:v1.*.*",
-        "alias": "mw_dictionary"
-      }, {
         "name": "transposit/mw_thesaurus:v1.*.*",
         "alias": "mw_thesaurus"
       }],
