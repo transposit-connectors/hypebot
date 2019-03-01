@@ -11,9 +11,6 @@
         "name": "transposit/slack:v1.*.*",
         "alias": "slack"
       }, {
-        "name": "sarah/raw_slack_bot:latest",
-        "alias": "raw_slack_bot"
-      }, {
         "name": "transposit/slack:v1.*.*",
         "alias": "slackbot"
       }, {
