@@ -131,7 +131,8 @@
           }
         }
       }],
-      "javascriptAPIVersion": "3"
+      "javascriptAPIVersion": "3",
+      "source": "src"
     }
   }
 }
