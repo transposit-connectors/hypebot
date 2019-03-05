@@ -112,7 +112,6 @@
         "overrides": {
           "swagger": {
             "oauthConfig": {
-              "scope": "bot"
             },
             "executionLimits": {
             }
