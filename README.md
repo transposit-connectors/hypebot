@@ -2,7 +2,8 @@
 
 This Transposit app listens to messages from slack, looks up the words from each message in a thesaurus, and responds to the message with a set of matching emoji reactions.
 
-To create your own hypebot (or any slackbot), 
+To create your own hypebot (or any slackbot):
+
   1. Fork this app in transposit!
   2. Visit https://api.slack.com/apps and click "Create New App"
   3. Add the bot features:
