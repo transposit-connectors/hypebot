@@ -122,7 +122,7 @@
         "overrides": {
           "swagger": {
             "oauthConfig": {
-              "scope": "bot",
+              "scope": "bot,channels:history,emoji:read",
               "accessTokenPath": "bot.bot_access_token"
             },
             "executionLimits": {
