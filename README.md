@@ -8,7 +8,7 @@ To create your own hypebot (or any slackbot):
   2. Visit https://api.slack.com/apps and click "Create New App"
   3. Add the bot features:
     * Once the app is created, under Bot Users, click "Add a Bot User"
-    * Under OAuth & Permissions > Scopes, add the redirect url "https://console.transposit.com/oauthCallback" and the "bot" scope.
+    * Under OAuth & Permissions > Scopes, add the redirect url "https://accounts.transposit.com/oauth/v2/handle-redirect" and the "bot" scope.
     * Under Event Subscriptions, Enable Events and set the request url to your transposit webhook url which you can find in Transposit under Deploy > Endpoints.
     * Under Event Subscriptions > Subscribe to Bot Events, click "Add Bot User Event" and add the "message.channels" event.
   4. Link Transposit and Slack:
