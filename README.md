@@ -1,4 +1,4 @@
-# Slackbot that reacts to messages
+# Hypebot
 
 This Transposit app listens to messages from slack, looks up the words from each message in a thesaurus, and responds to the message with a set of matching emoji reactions.
 
