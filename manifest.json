@@ -133,7 +133,7 @@
       "javascriptAPIVersion": "3",
       "source": "src"
     },
-    "description": "This Transposit app listens to messages from slack, looks up the words from each message in a thesaurus, and responds to the message with a set of matching emoji reactions.",
+    "description": "Hypebot listens to messages from Slack, looks up the words from each message in a thesaurus, and reacts to the message with a set of emojis.",
     "displayName": "Hypebot"
   }
 }
